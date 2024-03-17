@@ -116,7 +116,9 @@ const displayController = (function() {
     const updateDom = function() {
         for (let i = 0; i < cells.length; i++) {
             cells[i].textContent = gameBoard.getBoardIndex(i);
-            cells[i].classList.remove('win')
+            cells[i].classList.remove('win');
+            messageDiv.classList.remove('X');
+            messageDiv.classList.remove('O');
             if (cells[i].textContent !== '') {
                 cells[i].classList.add("filled")
             } else {
@@ -145,7 +147,8 @@ const displayController = (function() {
 
     const changeWinClass = function(combo) {
         for (let i = 0; i < combo.length; i++) {
-            cells[combo[i]].classList.add('win')
+            cells[combo[i]].classList.add('win');
+            messageDiv.classList.add(gameController.getCurrentPlayer())
         }
     }
 

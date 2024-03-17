@@ -135,4 +135,13 @@ body {
 #message {
     font-size: 1.5rem;
     font-weight: bold;
+    transition: 0.5s ease-in-out;
+}
+
+#message.X {
+    color: orange;
+}
+
+#message.O {
+    color: aquamarine;
 }

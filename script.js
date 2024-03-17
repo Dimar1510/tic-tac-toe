@@ -45,7 +45,7 @@ const gameController = (function() {
         gameBoard.setBoardIndex(index, currentPlayer.getSign());
         displayController.updateDom();
         
-        if (checkWinner(index)) {
+        if (checkWinner()) {
             giveMessage('win');
             gameOver = true;
             return;
@@ -66,7 +66,7 @@ const gameController = (function() {
         if (msg === 'tie') textMessage = "It's a tie!"
         displayController.setMessage(textMessage);
     }
-    const checkWinner = (index) => {
+    const checkWinner = () => {
         const winConditions = [
           [0, 1, 2],
           [3, 4, 5],
